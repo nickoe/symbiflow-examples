@@ -1,9 +1,9 @@
 module top (
     input  clk,
-    output [3:0] led
+    output [15:0] led
 );
 
-    localparam BITS = 4;
+    localparam BITS = 16;
     localparam LOG2DELAY = 22;
 
     wire bufg;
@@ -15,5 +15,5 @@ module top (
         counter <= counter + 1;
     end
 
-    assign led[3:0] = counter >> LOG2DELAY;
+    assign led[15:0] = counter >> LOG2DELAY;
 endmodule
