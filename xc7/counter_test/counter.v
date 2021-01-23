@@ -1,6 +1,7 @@
 `timescale 1 ps / 1 ps
+`default_nettype	none
 
-module top (
+module counter (
     input  clk,
     output [15:0] led
 );
@@ -11,11 +12,11 @@ module top (
     wire bufg;
     BUFG bufgctrl(.I(clk), .O(bufg));
 
-    reg [BITS+LOG2DELAY-1:0] counter = 0;
+    reg [BITS+LOG2DELAY-1:0] counter_reg = 0;
 
     always @(posedge bufg) begin
-        counter <= counter + 1;
+        counter_reg <= counter_reg + 1;
     end
 
-    assign led[15:0] = counter[BITS+LOG2DELAY-1:LOG2DELAY];
+    assign led[15:0] = counter_reg[BITS+LOG2DELAY-1:LOG2DELAY];
 endmodule
