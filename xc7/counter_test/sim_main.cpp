@@ -10,6 +10,7 @@
 
 // Include common routines
 #include <verilated.h>
+#include <verilated_vcd_c.h>
 
 // Include model header, generated from Verilating "counter.v"
 #include "Vcounter.h"
