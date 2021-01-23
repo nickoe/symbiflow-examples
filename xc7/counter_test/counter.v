@@ -6,7 +6,7 @@ module top (
 );
 
     localparam BITS = 16;
-    localparam LOG2DELAY = 40;
+    localparam LOG2DELAY = 22;
 
     wire bufg;
     BUFG bufgctrl(.I(clk), .O(bufg));
@@ -17,5 +17,5 @@ module top (
         counter <= counter + 1;
     end
 
-    assign led[15:0] = counter >> LOG2DELAY;
+    assign led[15:0] = counter[15:0] >> LOG2DELAY;
 endmodule
