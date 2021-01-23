@@ -6,7 +6,7 @@ module top (
 );
 
     localparam BITS = 16;
-    localparam LOG2DELAY = 2;
+    localparam LOG2DELAY = 22;
 
     wire bufg;
     BUFG bufgctrl(.I(clk), .O(bufg));

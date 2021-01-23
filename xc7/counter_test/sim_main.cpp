@@ -55,7 +55,6 @@ int main(int argc, char** argv, char** env) {
     tfp->open("trace.vcd");
 
     // Set some inputs
-    //top->counter = 0;
     top->clk = 0;
 
     // Simulate until $finish
@@ -72,7 +71,7 @@ int main(int argc, char** argv, char** env) {
         top->eval();
 
         // Read outputs
-        VL_PRINTF("[%" VL_PRI64 "d] clk=%x led=%x\n", main_time, top->clk, top->led);
+        //VL_PRINTF("[%" VL_PRI64 "d] clk=%x led=%x\n", main_time, top->clk, top->led);
     }
 
     // Final model cleanup
