@@ -1,10 +1,12 @@
+`timescale 1 ps / 1 ps
+
 module top (
     input  clk,
     output [15:0] led
 );
 
     localparam BITS = 16;
-    localparam LOG2DELAY = 22;
+    localparam LOG2DELAY = 40;
 
     wire bufg;
     BUFG bufgctrl(.I(clk), .O(bufg));
