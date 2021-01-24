@@ -1,7 +1,7 @@
 mkfile_path := $(abspath $(lastword $(MAKEFILE_LIST)))
 current_dir := $(patsubst %/,%,$(dir $(mkfile_path)))
-TOP:=counter
-VERILOG:=${current_dir}/counter.v
+TOP:=top
+VERILOG:=${current_dir}/top.v ${current_dir}/counter.v
 DEVICE  := xc7a50t_test
 BITSTREAM_DEVICE := artix7
 BUILDDIR:=build

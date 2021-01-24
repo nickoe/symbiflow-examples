@@ -1,13 +1,14 @@
 `timescale 1 ps / 1 ps
 `default_nettype	none
 
-module counter (
+module counter
+#(parameter LOG2DELAY = 8)
+(
     input  clk,
     output [15:0] led
 );
 
     localparam BITS = 16;
-    localparam LOG2DELAY = 22;
 
     wire bufg;
     BUFG bufgctrl(.I(clk), .O(bufg));

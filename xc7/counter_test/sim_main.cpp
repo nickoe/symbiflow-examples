@@ -13,7 +13,7 @@
 #include <verilated_vcd_c.h>
 
 // Include model header, generated from Verilating "counter.v"
-#include "Vcounter.h"
+#include "Vtop.h"
 
 // Current simulation time (64-bit unsigned)
 vluint64_t main_time = 0;
@@ -48,7 +48,7 @@ int main(int argc, char** argv, char** env) {
 
     // Construct the Verilated model, from Vtop.h generated from Verilating "top.v"
     // Using unique_ptr is similar to "Vtop* top = new Vtop" then deleting at end
-    const std::unique_ptr<Vcounter> top{new Vcounter};
+    const std::unique_ptr<Vtop> top{new Vtop};
 
     VerilatedVcdC* tfp = new VerilatedVcdC;
     top->trace(tfp, 99);  // Trace 99 levels of hierarchy
